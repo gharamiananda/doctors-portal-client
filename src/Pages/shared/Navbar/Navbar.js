@@ -1,7 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../Firebase/firebase.init';
+
 
 const Navbar = () => {
+    const [user, loading, error] = useAuthState(auth);
+
 
     const menuItem = <>
 
@@ -11,6 +16,9 @@ const Navbar = () => {
         <li><Link to='/reviews'>Reviews</Link></li>
         <li><Link to='/contact'>Contact Us</Link></li>
         <li><Link to='/login'>Login</Link></li></>
+
+
+
     return (
         <div class="navbar bg-base-100">
             <div class="navbar-start">
@@ -27,6 +35,7 @@ const Navbar = () => {
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
                     {menuItem}
+
                 </ul>
             </div>
 
