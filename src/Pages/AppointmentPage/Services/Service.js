@@ -7,15 +7,15 @@ const Service = ({ service, setTreatment }) => {
         <div>
 
 
-            <div class="card lg:max--w-lg bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="card-title"> {name}</h2>
+            <div className="card lg:max--w-lg bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="card-title"> {name}</h2>
                     <p>{slots.length} {slots.length > 1 ? 'spaces' : 'space'} available</p>
-                    <div class="card-actions justify-end">
+                    <div className="card-actions justify-end">
 
 
-                        <label for="my-modal-6"
-                            class="btn btn-primary" disabled={slots.length == 0}
+                        <label htmlFor="my-modal-6"
+                            className="btn btn-primary" disabled={slots.length == 0}
                             onClick={() => setTreatment(service)}
                         >open modal</label>
                     </div>
